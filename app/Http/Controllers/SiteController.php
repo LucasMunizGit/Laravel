@@ -8,9 +8,12 @@ class SiteController extends Controller
     public function index ()
     {
         $nome = 'Lucas Muniz';
-        $habits = ['Ler', 'Correr', 'Estudar']; 
+        $habits = ['Ler', 'Correr', 'Estudar', 'Viajar',]; 
 
-        return view('home',);
+        return view('home', [
+            'name' => $nome,
+            'habits' => $habits
+        ]);
     }
 
 }
