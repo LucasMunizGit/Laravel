@@ -10,10 +10,11 @@ class SiteController extends Controller
         $nome = 'Lucas Muniz';
         $habits = ['Ler', 'Correr', 'Estudar', 'Viajar',]; 
 
-        return view('home', [
-            'name' => $nome,
-            'habits' => $habits
-        ]);
+        return view('home', compact('nome', 'habits'));
     }
 
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 }
