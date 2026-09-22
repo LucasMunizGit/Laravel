@@ -21,8 +21,14 @@
                         type="email" 
                         name="email"
                         placeholder="xablau@exemplo.com"
-                        class="bg-white p-2 border-2"
+                        class="bg-white p-2 border-2 @error('email') border-red-500 @enderror"
                     >
+                    
+                        @error('email')
+                            <p class="text-red-500 text-sm">
+                                {{ $message }}
+                            </p>
+                        @enderror
                     </div>
                 
                     <div class="flex flex-col gap-2 mb-4">
