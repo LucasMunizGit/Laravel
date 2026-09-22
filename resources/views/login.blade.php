@@ -13,7 +13,7 @@
             <form action="/login" method="POST" class="flex flex-col">
                 @csrf
 
-                <div class="flex flex-col gap-2 mb-4">
+                <div class="flex flex-col gap-2 mb-2">
                     <label for="email">
                         Email
                     </label>
@@ -39,8 +39,14 @@
                         type="password"
                         name="password"
                         placeholder="*****************"
-                        class="bg-white p-2 border-2"
+                        class="bg-white p-2 border-2 @error('password') border-red-500 @enderror"
                     >
+                        @error('password')
+                            <p class="text-red-500 text-sm">
+                                {{ $message }}
+                            </p>
+                        @enderror
+                    </div>
                 </div>
 
                 <button 
